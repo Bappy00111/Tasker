@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SearchTask from "./SearchTask";
 import TaskAction from "./TaskAction";
 import TaskList from "./TaskList";
+import AddTaskModal from "./AddTaskModal";
 
 const TaskerBord = () => {
   const defaultTask = {
@@ -14,8 +15,12 @@ const TaskerBord = () => {
     isFavarite: true,
   };
   const [tasks, setTasks] = useState([defaultTask]);
+  const [shwoAddModal, setShowAddModal] = useState(false);
+
+  const handleAddTask = () => {};
   return (
     <section className="mb-20" id="tasks">
+      {shwoAddModal && <AddTaskModal/>}
       <div className="container">
         {/* search task  */}
         <div className="p-2 flex justify-end">
@@ -23,7 +28,7 @@ const TaskerBord = () => {
         </div>
 
         <div className="rounded-xl border border-[rgba(206,206,206,0.12)] bg-[#1D212B] px-6 py-8 md:px-9 md:py-16">
-          <TaskAction />
+          <TaskAction onAddClick={() => setShowAddModal(true)} />
           <TaskList tasks={tasks} />
         </div>
       </div>

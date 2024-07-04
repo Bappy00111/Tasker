@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./Components/Header";
+import { Header, Footer } from "./Components/";
+
 import HeroSection from "./Components/HeroSection";
-import Footer from "./Components/Footer";
 import TaskerBord from "./Tasker/TaskerBord";
 
 const App = () => {
